@@ -1,22 +1,31 @@
-<h2>Tarefas</h2>
+<div class="row">
 
-
-<button type="button" class="btn btn-primary mb-2" [routerLink]="['/new']">
-    Nova Tarefa
-</button>
-
-<section>
-
-    <div *ngIf="tasks.length == 0" class="alert alert-warning" role="alert">
-        Nemhuma tarefa foi cadastrada ainda.
+    <div class="col-md-1">
     </div>
 
-    <ul class="list-group" *ngIf="tasks.length > 0">
-        <li class="list-group-item" *ngFor="let task of tasks">
+    <div class="col-md-10">
+        <h2>Tarefas</h2>
 
-            <app-task-list-item [task]="task" class="task-item"></app-task-list-item>
 
-        </li>
-    </ul>
+        <button type="button" class="btn btn-primary mb-2" [routerLink]="['/new']">
+                Nova Tarefa
+            </button>
 
-</section>
+        <section>
+
+            <div *ngIf="tasks.length == 0" class="alert alert-warning" role="alert">
+                Nemhuma tarefa foi cadastrada ainda.
+            </div>
+
+            <ul class="list-group" *ngIf="tasks.length > 0">
+                <li class="list-group-item" *ngFor="let task of tasks">
+
+                    <app-task-list-item [task]="task" class="task-item"></app-task-list-item>
+
+                </li>
+            </ul>
+
+        </section>
+    </div>
+
+</div>
