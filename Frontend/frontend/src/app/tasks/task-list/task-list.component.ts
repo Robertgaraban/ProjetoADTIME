@@ -8,12 +8,26 @@ import { Task } from '../shared/task';
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent implements OnInit {
-  tasks: Task[] = [];
+  tasks: any= [];
 
   constructor(private taskService: TaskService) { }
 
+  
+  ngAfterViewInit() {
+    
+    this.taskService.getAll().subscribe(tasks => {
+      this.tasks = tasks
+    });
+  }
+  
   ngOnInit() {
-    this.tasks = this.taskService.getAll();
+    
+  this.taskService.getAll().subscribe(tasks => {
+       this.tasks = tasks
+     });
+
+  
+
   }
 
 }

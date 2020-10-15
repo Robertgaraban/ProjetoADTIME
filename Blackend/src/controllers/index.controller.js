@@ -10,7 +10,12 @@ const pool = new Pool({
 
 const getUsers = async(req, res) => {
     const response = await pool.query('SELECT * FROM users ORDER BY id ASC');
-    res.status(200).json(response.rows);
+    let tarefas = []
+    for (let item of response.rows) {
+        item.description = item.tarefa
+        tarefas.push(item)
+    }
+    res.status(200).json(tarefas);
 };
 
 const getUserById = async(req, res) => {

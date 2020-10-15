@@ -25,9 +25,10 @@ export class TaskFormComponent implements OnInit {
       this.task = this.taskService.getById(parseInt(id));
       this.title = 'Alterando Tarefa';
     }
+
   }
-  OnSubmit() {
-    this.taskService.save(this.task);
+  async OnSubmit() {
+    this.taskService.save(this.task).subscribe(resposta => {});
     this.router.navigate(['']);
   }
 }
