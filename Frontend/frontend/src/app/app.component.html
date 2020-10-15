@@ -1,30 +1,18 @@
-<div class="row">
-
-    <div class="col-md-1">
-    </div>
-
-    <div class="col-md-10">
-
-        <div class="text-center mb-4 mt-4">
-            <img src="/assets/img/Logo-Adtime.png" height="100px" alt="ADTIME" class="routelink" [routerLink]="['']" routerLinkActive="router-link-active">
-        </div>
+<!-- header logo-->
+<div class="text-center mb-4 mt-4">
+    <img src="/assets/img/Logo-Adtime.png" height="100px" alt="ADTIME" class="routelink" [routerLink]="['']" routerLinkActive="router-link-active">
+</div>
 
 
-        <div class="col-md-10">
-            <main class="col-md-10">
-                <router-outlet></router-outlet>
-            </main>
-        </div>
+<!-- viene del task list item component-->
 
+<router-outlet></router-outlet>
 
-        <div class="col-md-10">
-            <footer class="mt-2 p-2 text-center">
-                <strong>
-                <p> 2020 - criado por Keyni Rivas, Robert Garabán, Karen Gallardo; para TOTI BR </p>
-                </strong>
-            </footer>
-        </div>
-
-    </div>
-
+<!-- footer-->
+<div>
+    <footer class="text-center mb-12 mt-12">
+        <strong>
+            <p> 2020 - criado por Keyni Rivas, Robert Garabán, Karen Gallardo; para TOTI BR </p>
+        </strong>
+    </footer>
 </div>
