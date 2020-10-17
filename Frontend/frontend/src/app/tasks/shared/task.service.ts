@@ -1,6 +1,7 @@
 import { Task } from '../shared/task';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { concat } from 'rxjs';
 
 
 
@@ -9,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TaskService {
   task: Task [] = [];
+  delete: any;
 
   constructor(private http:HttpClient) { 
 
@@ -59,11 +61,13 @@ export class TaskService {
     // window.localStorage.setItem('lista-tarefas', JSON.stringify(this.task));
     }
 
-    delete(id: number) {
-      const taskIndex = this.task.findIndex((value) => value.id == id);
-      this.task.splice(taskIndex, 1);
-      window.localStorage.setItem('lista-tarefas', JSON.stringify(this.task));
+    // delete(id: number): {
+    //   const taskIndex = this.task.findIndex((value) => value.id == id);
+    //   this.task.splice(taskIndex, 1);
+    //   window.localStorage.setItem('lista-tarefas', JSON.stringify(this.task));
+    // }
+      
   }
 
   
-}
+

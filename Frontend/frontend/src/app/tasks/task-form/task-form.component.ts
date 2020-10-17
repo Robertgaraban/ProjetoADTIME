@@ -10,7 +10,7 @@ import { TaskService } from '../shared/task.service';
 })
 export class TaskFormComponent implements OnInit {
   task: Task = new Task();
-  title: string = 'Nova tarefa';
+  title: string = 'Nova Tarefa';
 
   constructor(
     private activatedRoute: ActivatedRoute,
