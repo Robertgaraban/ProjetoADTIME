@@ -2,24 +2,20 @@ import { Task } from '../shared/task';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { concat } from 'rxjs';
-
-
+import { deleteUser } from '../../../controllers/index.controller';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TaskService {
-  task: Task [] = [];
-  delete: any;
+  task: Task[] = [];
 
-  constructor(private http:HttpClient) { 
-
-  }
+  constructor(private http: HttpClient) {}
 
   getAll() {
     // const list = window.localStorage.getItem('lista-tarefas');
-    return this.http.get('http://localhost:3000/users')
-    
+    return this.http.get('http://localhost:3000/users');
+
     // if (list) {
     //   this.task = JSON.parse(list);
     // }
@@ -27,47 +23,24 @@ export class TaskService {
   }
 
   getById(id: number) {
-    const task = this.task.find((value) => value.id == id);
-    return task;
+    return this.http.get(`http://localhost:3000/users/${id}`);
+    
   }
-  
-  save(task: Task) {
-    // if (task.id) {
-    //   const taskArr = this.getById (task.id);
-    //   taskArr.description = task.description;
-    //   taskArr.completed = task.completed;
-    // } else {
-      // let lastId = 0;
-      // if (this.task.length > 0) {
-      //   lastId = this.task[this.task.length-1].id;
-      // }
 
-      // task.id = lastId + 1;
-      // task.completed = false;
-      // this.task.push(task);
-      let tarefa : any = {};
+  save(task: Task) {
+    if (task.id) {
+      let tarefa: any = {};
+      tarefa.tarefa = task.description;
+      tarefa.name = '';
+      return this.http.put(`http://localhost:3000/users/${task.id}`, tarefa);
+    } else {
+      let tarefa: any = {};
       tarefa.tarefa = task.description;
       tarefa.name = '';
       return this.http.post('http://localhost:3000/users', tarefa);
-
-
-      // let tarefa : any = {};
-      // tarefa.tarefa = task.description;
-      // tarefa.name = '';
-      // return this.http.put('http://localhost:3000/users', tarefa)
-
-    // }
-
-    // window.localStorage.setItem('lista-tarefas', JSON.stringify(this.task));
     }
-
-    // delete(id: number): {
-    //   const taskIndex = this.task.findIndex((value) => value.id == id);
-    //   this.task.splice(taskIndex, 1);
-    //   window.localStorage.setItem('lista-tarefas', JSON.stringify(this.task));
-    // }
-      
   }
-
-  
-
+  delete(id: any) {
+    return this.http.delete(`http://localhost:3000/users/${id}`);
+  }
+}

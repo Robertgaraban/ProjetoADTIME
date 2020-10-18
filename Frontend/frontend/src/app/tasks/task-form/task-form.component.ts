@@ -22,7 +22,10 @@ export class TaskFormComponent implements OnInit {
     this.task.description= '';
     const id= this.activatedRoute.snapshot.paramMap.get('id');
     if (id) {
-      this.task = this.taskService.getById(parseInt(id));
+      this.taskService.getById(parseInt(id)).subscribe((tarefaid: Task) => {
+      this.task = tarefaid[0];
+      console.log(this.task);
+      });
       this.title = 'Alterando Tarefa';
     }
 

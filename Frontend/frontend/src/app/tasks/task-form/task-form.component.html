@@ -1,8 +1,8 @@
-<div class="container">
-    <div class="col-md-4">
+<div class="card text-white bg-secondary mb-3 ">
+    <div class="card-header">
         <h2>{{ title }}</h2>
-
-
+    </div>
+    <div class="card-body">
         <section id="form">
             <form (ngSubmit)="OnSubmit()" #formTask="ngForm" ngNativeValidate>
                 <div class="form-group">
@@ -15,6 +15,5 @@
 
             </form>
         </section>
-
     </div>
 </div>
