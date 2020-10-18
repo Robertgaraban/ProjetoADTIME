@@ -1,15 +1,20 @@
-<h2>{{ title }}</h2>
+<div class="container">
+    <div class="col-md-4">
+        <h2>{{ title }}</h2>
 
 
-<section id="form">
-    <form (ngSubmit)="OnSubmit()" #formTask="ngForm" ngNativeValidate>
-        <div class="form-group">
-            <label>Descripção</label>
-            <input [(ngModel)]="task.description" name="description" placeholder="Digite sua Tarefa" maxlength="80" class="form-control" required="true">
-        </div>
+        <section id="form">
+            <form (ngSubmit)="OnSubmit()" #formTask="ngForm" ngNativeValidate>
+                <div class="form-group">
+                    <label>Descripção</label>
+                    <input [(ngModel)]="task.description" name="description" placeholder="Digite sua Tarefa" maxlength="80" class="form-control" required="true">
+                </div>
 
-        <button type="submit" class="btn btn-primary mr-2">Salvar</button>
-        <button type="button" class="btn btn-secondary" [routerLink]="['']">Cancelar</button>
+                <button type="submit" class="btn text-white bg-dark mr-2">Salvar</button>
+                <button type="button" class="btn text-white bg-dark" [routerLink]="['']">Cancelar</button>
 
-    </form>
-</section>
+            </form>
+        </section>
+
+    </div>
+</div>
