@@ -1,0 +1,8 @@
+.task-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 1;
+    white-space: pre-line;
+    text-decoration: line-through;
+}
