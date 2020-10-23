@@ -1,5 +1,10 @@
-.task-completed {}
-
 .task-item-description {
-    flex-grow: 1;
+    flex-grow: 2;
+    text-align: left;
+    text-indent: 10px;
+}
+
+.form-group {
+    text-align: left;
+    text-indent: -5px;
 }
