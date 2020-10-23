@@ -8,3 +8,7 @@
     text-align: left;
     text-indent: -5px;
 }
+
+.form-check-input {
+    text-decoration: line-through;
+}

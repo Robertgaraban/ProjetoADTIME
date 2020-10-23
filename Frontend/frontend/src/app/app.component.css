@@ -5,6 +5,8 @@ img.routelink {
 
 div.row {
     position: relative;
-    top: 350px;
+    top: 364px;
     left: 0px;
+    background-color: black;
+    color: blanchedalmond;
 }

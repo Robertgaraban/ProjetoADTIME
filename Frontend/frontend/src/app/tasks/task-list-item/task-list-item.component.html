@@ -1,15 +1,21 @@
 <div class="form-group">
+
     <input type="checkbox" class="form-check-input" [(ngModel)]="task.completed" (change)="onCompletedCheckChange(task)" />
+
 </div>
+
+
 <div [innerHTML]="task.description" class="task-item-description" [ngClass]="task.completed ? 'task-completed' : ''">
+
 </div>
+
 <div>
     <button type="button" [routerLink]="['/edit', task.id]" class="btn bg-dark text-white mr-1">
-        Edit
+        Atualizar
     </button>
 </div>
 <div>
     <button type="button" class="btn text-white bg-dark" (click)="remove(task)">
-        Delete
+        Apagar
     </button>
 </div>

@@ -3,3 +3,7 @@
     text-align: left;
     text-indent: 10px;
 }
+
+.task-completed {
+    text-decoration: line-through;
+}
