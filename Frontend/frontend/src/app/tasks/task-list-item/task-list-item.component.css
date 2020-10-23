@@ -1,14 +1,11 @@
+.task-completed {
+    text-decoration: line-through;
+}
+
 .task-item-description {
     flex-grow: 2;
     text-align: left;
-    text-indent: 10px;
-}
-
-.form-group {
-    text-align: left;
-    text-indent: -5px;
-}
-
-.form-check-input {
-    text-decoration: line-through;
+    text-indent: 15px;
+    display: inline-block;
+    margin-left: 15px;
 }

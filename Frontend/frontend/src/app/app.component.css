@@ -1,11 +1,11 @@
 img.routelink {
     width: 300px;
-    border-radius: 5px;
+    border-radius: 7px;
 }
 
 div.row {
     position: relative;
-    top: 364px;
+    top: 348px;
     left: 0px;
     background-color: black;
     color: blanchedalmond;
